@@ -8,25 +8,31 @@ form.addEventListener('submit', e => {
     textoInputForm.value = ''
 })
 
-
 function criaElementoTela({value: texto}){
     const idLiElemento = Date.now()
+    const elementoLiParaMostrarNaTela = `<li class="listElementoNum${idLiElemento}"><button id="editBtn">Editar</button><p>${texto}</p><button id="deleteBtn">Deletar</button></li>`
 
     const listElementos = document.querySelector('ul')
-    listElementos.insertAdjacentHTML('afterbegin', `<li class="listElementoNum${idLiElemento}"><button id="editBtn">Editar</button>${texto}<button id="deleteBtn">Deletar</button></li>`)
+    listElementos.insertAdjacentHTML('afterbegin', elementoLiParaMostrarNaTela)
     
-    // FIXME: corrigir erro ao editar elemento. Ele não abre o modal para editar o item
     const btnEdit = document.querySelector('#editBtn')
     btnEdit.addEventListener('click', () => {
-        const liElemento = document.querySelector('.listElementoNum' + idLiElemento)
-        listElementos.insertAdjacentElement('afterbegin', `<div class="modalEditItem"></div>`)
+        editaElementTela(idLiElemento)
     })
 
     const btnDelete = document.querySelector('#deleteBtn')
     btnDelete.addEventListener('click', () => {
-        const liElemento = document.querySelector('.listElementoNum' + idLiElemento)
-        liElemento.remove()
+        deletaElementoTela(idLiElemento)
     })
 }
 
-// refatorar código após conclusão prévia...
+function editaElementTela(idLiElemento){
+    const liElemento = document.querySelector('.listElementoNum' + idLiElemento)
+    const textoToUpdate = liElemento.childNodes[1]
+    textoToUpdate.textContent = prompt("Qual o novo item?")
+}
+
+function deletaElementoTela(idLiElemento){
+    const liElemento = document.querySelector('.listElementoNum' + idLiElemento)
+    liElemento.remove()
+}

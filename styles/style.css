@@ -35,20 +35,16 @@ ul > li{
     gap: 1em;
     justify-content: space-around;
     margin: .5em;
-    padding: .3em;
+    padding: .5em .2em;
     font-size: 1.3em;
     list-style: none;
-    background-color: aqua;
+    background-color: rgba(110, 131, 131, 0.681);
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 1.6em
 }
-#btnElement{
+button{
     padding: .3em;
-}
-
-.modalEditItem{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: aqua;
+    border-radius: 5px;
+    border: 2px solid black;
 }
