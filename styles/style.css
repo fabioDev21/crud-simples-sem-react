@@ -77,7 +77,7 @@ button{
         }
     }
 
-    #closeBtn{
+    #editCloseBtn{
         position: absolute;
         top: 5px;
         right: 10px;
