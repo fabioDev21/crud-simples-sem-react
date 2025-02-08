@@ -26,6 +26,19 @@ function criaElementoTela({value: texto}){
     })
 }
 
+
+// Área relacionada a edição de elementos
+const editBoxAserAdc = 
+`   <div id="editBox">
+        <h3>Caixa de Edição</h3>
+        <label for="novoItemSetado">
+            <p>Novo item: </p>
+            <input id="novoItemSetado" type="text">
+        </label>
+        <p id="closeBtn">Fechar</p>
+    </div>`
+// Elemento a ser finalizado, caixa de edição de itens
+
 function editaElementTela(idLiElemento){
     const liElemento = document.querySelector('.listElementoNum' + idLiElemento)
     const textoToUpdate = liElemento.childNodes[1]
